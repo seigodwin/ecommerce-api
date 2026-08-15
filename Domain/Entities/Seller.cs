@@ -6,20 +6,21 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public sealed class User : BaseEntity
+    public sealed class Seller : BaseEntity
     {
         public required string FullName { get; private set; }
         public required string Email { get; private set; }
-        public UserRole Role { get; private set; } = UserRole.User;
-        public ICollection<Product> Products { get; private set; }
+        public UserRole Role { get; private set; } = UserRole.Seller;
+        // Navigation property
+        public ICollection<Product> Products { get; private set; } = new List<Product>();
         public Address? Address { get; private set; }
         
         //EF CORE
-        public User() { }
+        public Seller() { }
 
-        public static User Create(string fullName, string email, UserRole role, Address? address = null)
+        public static Seller Create(string fullName, string email, UserRole role, Address? address = null)
         {
-            var user = new User
+            var user = new Seller
             {
                 FullName = fullName,
                 Email = email,

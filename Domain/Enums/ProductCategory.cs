@@ -12,5 +12,6 @@ namespace Domain.Enums
         HomeAndGarden = 4,
         Smartphones = 5,
         Laptops = 6,
+        None = 7,
     }
 }

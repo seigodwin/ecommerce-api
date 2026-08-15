@@ -38,6 +38,7 @@ namespace Domain.Entities
             {
                 totalPrice += product.Price;
             }
+
             return totalPrice;
         }
     }

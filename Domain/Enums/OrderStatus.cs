@@ -4,7 +4,14 @@ using System.Text;
 
 namespace Domain.Enums
 {
-    internal class Class1
+    public enum OrderStatus
     {
+        Pending = 1,
+        Processing = 2,
+        Shipped = 3,
+        Delivered = 4,
+        Cancelled = 5,
+        Returned = 6,
     }
+   
 }
