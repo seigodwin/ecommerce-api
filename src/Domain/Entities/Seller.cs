@@ -8,8 +8,8 @@ namespace Domain.Entities
 {
     public sealed class Seller : BaseEntity
     {
-        public required string FullName { get; private set; }
-        public required string Email { get; private set; }
+        public required string FullName { get; init; }
+        public required string Email { get; init; }
         public UserRole Role { get; private set; } = UserRole.Seller;
         // Navigation property
         public ICollection<Product> Products { get; private set; } = new List<Product>();

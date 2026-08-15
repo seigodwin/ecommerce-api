@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Infrastructure.DbContext
 {
-    internal class ApplicationDbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
     }
 }

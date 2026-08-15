@@ -7,7 +7,7 @@ namespace Domain.Entities
 {
     public sealed class Product : BaseEntity
     {
-        public required string Name { get; private set; }
+        public required string Name { get; init; }
         public string Description { get; private set; } = string.Empty;
         public decimal Price { get; private set; }
         public ProductCategory Category { get; private set; } = ProductCategory.None;

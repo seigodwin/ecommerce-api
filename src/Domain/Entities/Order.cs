@@ -7,7 +7,7 @@ namespace Domain.Entities
 {
     public sealed class Order : BaseEntity
     {
-        public required string OrderNumber { get; private set; }
+        public required string OrderNumber { get; init; }
         public Guid BuyerId { get; private set; }
         //Navigation property
         public Buyer Buyer { get; private set; } = null!;

@@ -8,8 +8,8 @@ namespace Domain.Entities
     public sealed class Admin : BaseEntity
     {
 
-        public required string FullName { get; private set; }
-        public required string Email { get; private set; }
+        public required string FullName { get; init; }
+        public required string Email { get; init; }
         public UserRole Role { get; private set; } = UserRole.Admin;
 
 

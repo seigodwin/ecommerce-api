@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Domain.Enums;
+using Domain.ValueObjects;
 
 namespace Domain.Entities
 {
     public sealed class Buyer : BaseEntity
     {
-        public required string FullName { get; private set; }
-        public required string Email { get; private set; }
+        public required string FullName { get; init; }
+        public required string Email { get; init; }
         public UserRole Role { get; private set; } = UserRole.Buyer;
-        public ICollection<Product> Products { get; private set; }
+        public ICollection<Product> Products { get; private set; } = new List<Product>();
         public Address? Address { get; private set; }
 
         //EF CORE
