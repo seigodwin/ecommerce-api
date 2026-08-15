@@ -10,7 +10,7 @@ namespace Domain.Entities
 
         public required string FullName { get; private set; }
         public required string Email { get; private set; }
-        public UserRole Role { get; private set; } = UserRole.Admin
+        public UserRole Role { get; private set; } = UserRole.Admin;
 
 
         //EF CORE

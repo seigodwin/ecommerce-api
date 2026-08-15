@@ -21,7 +21,7 @@ namespace Domain.ValueObjects
             if(string.IsNullOrWhiteSpace(postalCode)) 
                 throw new ArgumentException("Postal code cannot be empty.", nameof(postalCode));
             if(string.IsNullOrWhiteSpace(country)) 
-                throw new ArgumentException("Country cannot be empty.", nameof(country))
+                throw new ArgumentException("Country cannot be empty.", nameof(country));
 
             Street = street;
             City = city;
