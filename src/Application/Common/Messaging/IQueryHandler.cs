@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Application.Common.Messaging
 {
-    internal interface IQueryHandler
+    public interface IQueryHandler<in TQuery, TResponse> : IRequestHandler<TQuery, TResponse>
+    where TQuery : IQuery<TResponse>
     {
+
     }
 }

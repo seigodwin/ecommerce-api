@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application.Common.Messaging
 {
-     public interface IQuery<TResponse> : IRequest<TResponse>
+    internal class Sender
     {
     }
 }

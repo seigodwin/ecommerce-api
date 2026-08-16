@@ -9,7 +9,7 @@ namespace Application.Common.Messaging
     }
 
     //For commands that do not return a response, you can use the Unit type as the response type.
-    public interface ICommand : ICommand<Unit>
+    public interface ICommand : IRequest<Unit>
     {
     }
 }

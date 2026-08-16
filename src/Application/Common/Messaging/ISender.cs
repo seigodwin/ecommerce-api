@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Application.Common.Messaging
 {
-    internal interface Isender
+    public interface ISender
     {
+        Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default);
     }
 }

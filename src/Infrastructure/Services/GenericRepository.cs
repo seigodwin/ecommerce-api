@@ -1,6 +1,7 @@
 ﻿using Application.Common.Interfaces;
 using Application.Common.Specifications;
 using Infrastructure.Data.DbContext;
+using Infrastructure.Specification;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,10 @@ namespace Infrastructure.Services
 
         public async Task<T?> FirstOrDefaultAsync(BaseSpecification<T> spec, CancellationToken ct = default)
         {
-            throw new NotImplementedException();
+            var query = _dbSet.AsQueryable();
+            query = SpecificationsEvaluator<T>.GetQuery(query, spec);
+
+            return await query.FirstOrDefaultAsync(ct);
         }
 
         public async Task<T?> GetByIdAsync(Guid id, CancellationToken ct = default)
@@ -42,9 +46,12 @@ namespace Infrastructure.Services
             _dbSet.Update(entity);
         }
 
-        public Task<IEnumerable<T>> GetListAsync(BaseSpecification<T> spec, CancellationToken ct = default)
+        public async Task<IEnumerable<T>> GetListAsync(BaseSpecification<T> spec, CancellationToken ct = default)
         {
-            throw new NotImplementedException();
+            var query = _dbSet.AsQueryable();
+            query = SpecificationsEvaluator<T>.GetQuery(query, spec);
+            
+            return await query.ToListAsync(ct);
         }
 
         public async Task SaveChangesAsync(CancellationToken ct = default)
